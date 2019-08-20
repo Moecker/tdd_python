@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from lists.views import home_page
 from lists.models import Item
 
+
 class HomePageTest(TestCase):
     def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')
@@ -37,6 +38,7 @@ class HomePageTest(TestCase):
         response = self.client.get('/')
         self.assertIn('itemey 1', response.content.decode())
         self.assertIn('itemey 2', response.content.decode())
+
 
 class ItemModelTest(TestCase):
     def test_saving_and_retrieving_items(self):

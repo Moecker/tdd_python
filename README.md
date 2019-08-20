@@ -1,7 +1,7 @@
 # tdd_python
 Test-Driven Development with Python
 
-Examples from 
+Examples from
 ```
 Test-Driven Developmentwith Python
 OBEY THE TESTING GOAT:

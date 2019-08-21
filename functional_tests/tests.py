@@ -5,10 +5,10 @@ from selenium.common.exceptions import WebDriverException
 
 import time
 
-MAX_WAIT = 10
-
 
 class NewVisitorTest(LiveServerTestCase):
+    MAX_WAIT = 2
+
     def setUp(self):
         self.browser = webdriver.Firefox()
 
@@ -29,7 +29,7 @@ class NewVisitorTest(LiveServerTestCase):
                 self.assertIn(row_text, [row.text for row in rows])
                 return
             except (AssertionError, WebDriverException) as e:
-                if time.time() - start_time > MAX_WAIT:
+                if time.time() - start_time > self.MAX_WAIT:
                     raise e
                 time.sleep(0.5)
 
@@ -82,6 +82,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox.send_keys('Buy peacock feathers')
         inputbox.send_keys(Keys.ENTER)
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
+
         # She notices that her list has a unique URL
         edith_list_url = self.browser.current_url
         self.assertRegex(edith_list_url, '/lists/.+')

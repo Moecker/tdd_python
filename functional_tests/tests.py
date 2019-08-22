@@ -1,4 +1,4 @@
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
@@ -6,7 +6,7 @@ from selenium.common.exceptions import WebDriverException
 import time
 
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
     MAX_WAIT = 2
 
     def setUp(self):
@@ -46,7 +46,7 @@ class NewVisitorTest(LiveServerTestCase):
             delta=10
         )
 
-    def DISABLED_test_can_start_a_list_and_retrieve_later(self):
+    def test_can_start_a_list_and_retrieve_later(self):
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its homepage
         self.browser.get(self.live_server_url)
@@ -87,7 +87,7 @@ class NewVisitorTest(LiveServerTestCase):
         # that the site has generated a unique URL for her -- there is some
         # explanatory text to that effect.
 
-    def DISABLED_test_multiple_users_can_start_lists_at_different_urls(self):
+    def test_multiple_users_can_start_lists_at_different_urls(self):
         # Edith starts a new to-do list
         self.browser.get(self.live_server_url)
         inputbox = self.browser.find_element_by_id('id_new_item')

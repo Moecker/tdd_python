@@ -73,7 +73,6 @@ class NewVisitorTest(LiveServerTestCase):
         # Edith wonders whether the site will remember her list. Then she sees
         # that the site has generated a unique URL for her -- there is some
         # explanatory text to that effect.
-        self.fail('Finish the test!')
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         # Edith starts a new to-do list

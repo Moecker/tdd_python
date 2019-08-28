@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wu4gtvdc(z36*wu2d5t705ojgnjx^i4s^0kbs($ufgakr1y0)3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG = DEBUG
+
+ALLOWED_HOSTS = ['pisamo.dynv6.net', 'localhost', '192.168.178.32']
 
 
 # Application definition
